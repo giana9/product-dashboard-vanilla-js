@@ -1,0 +1,36 @@
+/* hover effects: product cards */
+.product-card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* resizes images */
+.product-card img {
+  width: 500px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* product alignment */
+#product-container {
+  display: flex;
+  flex-direction: column;   /* stacks items as you scroll down the page */
+  align-items: center;
+  gap: 40px;
+  padding: 20px;
+}
+
+/* other */
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
