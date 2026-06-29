@@ -10,6 +10,7 @@ function fetchProductsThen() {
     .catch(error => {
       console.log("Fetch error:", error);
     });
+}
 
 // fetchProductsAsync()
 async function fetchProductsAsync() {
@@ -42,4 +43,9 @@ function displayProducts(products) {
 
     container.appendChild(card);
   });
+}
+
+// reusable handleError(error)
+function handleError(error) {
+  console.log(`An error occurred: ${error.message}`);
 }
