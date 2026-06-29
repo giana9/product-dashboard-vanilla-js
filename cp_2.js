@@ -25,19 +25,25 @@ async function fetchProductsAsync() {
 
 // displayProducts(products)
 function displayProducts(products) {
-  const container = document.getElementById("product-container");
+    const container = document.getElementById("product-container");
 
-  const firstFive = products.slice(0, 5);
+    const firstFive = products.slice(0, 5);
 
-  firstFive.forEach(item => {
+    firstFive.forEach(item => {
     const { name, price, image } = item.fields;
+
+    // capitalized the first letter of each word for the products
+    const formattedName = name
+        .split(" ")
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
 
     const card = document.createElement("div");
     card.classList.add("product-card");
 
     card.innerHTML = `
-      <img src="${image[0].url}" alt="${name}">
-      <div class="product-name">${name}</div>
+      <img src="${image[0].url}" alt="${formattedName}">
+      <div class="product-name">${formattedName}</div>
       <div class="product-price">$${(price / 100).toFixed(2)}</div>
     `;
 
